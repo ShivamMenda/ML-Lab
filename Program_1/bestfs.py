@@ -53,4 +53,4 @@ heuristic_values = {
     'G': 0,
 }
 
-best_first_search(graph, start_node, goal_node, heuristic_values)
+best_first_search(graph, start_node, goal_node, heuristic_values) # S -> B -> F -> G
