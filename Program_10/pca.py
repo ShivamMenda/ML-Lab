@@ -1,39 +1,52 @@
-#Question 11a
-#Write a program to develop Principal Component Analysis (PCA) algorithms.
 import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import datasets
+
 class PCA:
     def __init__(self,n_components):
-        self.n_components=n_components
+        self.n_components=n_components # No of dimensions to reduce to
         self.components=None
         self.mean=None
-    def fit(self,X):
+
+    
+    def fit(self,X): #Unsupervised so no need class labels
+        # Subtract mean from x
         self.mean=np.mean(X,axis=0)
         X=X-self.mean
+
+        #Find Cov(X,X)
         cov=np.cov(X.T)
-        eigenvectors,eigenvalues = np.linalg.eig(cov)
+
+        #Find eigenvectors and eigenvalues
+        eigenvectors,eigenvalues=np.linalg.eig(cov)
+
+        #Transform eigenvector a column matrix to a row matrix
         eigenvectors=eigenvectors.T
-        idxs=np.argsort(eigenvalues)[::-1]
+
+        #Sort eigenvalues in decreasing order
+        idxs= np.argsort(eigenvalues)[::-1]
         eigenvalues=eigenvalues[idxs]
         eigenvectors=eigenvectors[idxs]
-        self.components = eigenvectors[:self.n_components]
+
+        #Choose the first k eigenvectors
+        self.components= eigenvectors[:self.n_components]
+
     def transform(self,X):
         X=X-self.mean
         return np.dot(X,self.components.T)
-if __name__ == "__main__":
-    import matplotlib.pyplot as plt
-    from sklearn import datasets
-    data=datasets.load_iris()
-    X=data.data
-    y=data.target
-    pca=PCA(2)
-    pca.fit(X)
-    X_projected = pca.transform(X)
-    print(X.shape)
-    print(X_projected.shape)
-    x1=X_projected[:,0]
-    x2=X_projected[:,1]
-    plt.scatter(x1,x2,c=y,edgecolor="None",alpha=0.8,cmap=plt.cm.get_cmap("viridis",3))
-    plt.xlabel("Principal component 1")
-    plt.ylabel("Principal component 2")
-    plt.colorbar()
-    plt.show()
+
+iris=datasets.load_iris()
+X=iris.data
+y=iris.target
+
+pca=PCA(2)
+pca.fit(X)
+X_projected=pca.transform(X)
+
+print(X.shape)
+print(X_projected.shape)
+
+x1=X_projected[:,0]
+x2=X_projected[:,1]
+plt.scatter(x1,x2,c=y)
+plt.show()
