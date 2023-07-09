@@ -24,13 +24,13 @@ def best_first_search(graph, start, goal, heuristic):
 
 # Example graph representation using adjacency list
 graph = {
-    'S':[('A'),('B')],
-    'A': [('C'), ('D')],
-    'B': [('E'), ('F')],
+    'S':['A','B'],
+    'A': ['C', 'D'],
+    'B': ['E', 'F'],
     'C': [],
     'D': [],
-    'E': [('H')],
-    'F': [('I'), ('G')],
+    'E': ['H'],
+    'F': ['I', 'G'],
     'H':[],
     'I':[],
     'G':[],

@@ -24,11 +24,10 @@ def astar_search(graph, start, goal, heuristic):
         closed_set.add(current_node.position)
 
         if current_node.position == goal_node.position:
-            path = []
+            path=[]
             while current_node:
                 path.append(current_node.position)
-                current_node = current_node.parent
-
+                current_node=current_node.parent
             return path[::-1]
 
         neighbors = graph[current_node.position]
@@ -70,7 +69,7 @@ path = astar_search(graph, start, goal, heuristic)
 
 if path:
     print("Path found:")
-    for node in path:
-        print(node)
+    for i in path:
+        print(i,end=" ")
 else:
     print("No path found.")

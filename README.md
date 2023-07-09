@@ -1,26 +1,24 @@
 # ML-Lab
 Programs for Machine Learning Lab (20CS67L)
 
-- [x] 1) Simple python program using conditional statements, looping , performing operations such as Insert , Update, Delete, Display, Sorting and searching on Datatypes like List, Tuple, Set, Dictionary.
+- [x] 1) Best First search and 3D plot
 
-- [x] 2) Visualize the n-dimensional data using Scatter plots, box plot, heat maps, contour plots, 3D surface plots using python packages.
+- [x] 2) A* and Contour Plot
 
-- [ ] 3) a) Write a program to implement the Best First Search(BFS) algorithm.
-         b) Write a program to implement the A* algorithm.
+- [x] 3) Heatmap and minimax Algo
 
-- [ ] 4) Write a program to implement Min-Max algorithm and Alpha-beta pruning algorithm.
-- [ ] 5) Write a program to develop the Naive Bayes classifier for the k values as 3,5,7 based on split up of training and testing dataset as 90-10, 70-30 and leave-one-out on,
-a) Iris dataset
-b) Titanic dataset
-- [ ] 6) Write a program to develop the KNN classifier for the k values as 3,5,7 based on split up of training and testing dataset as 90-10, 70-30 and leave- one-out on,
-a) Glass dataset
-b) Fruit dataset
-using the different distance metrics like Euclidean and Manhattan distance.
-- [ ] 7) Write a program to develop a decision tree classifier based on weather 3 forecasting dataset.
-- [ ] 8) Write a program to perform unsupervised K-means clustering techniques 3
-- [ ] 9) Write a program to perform agglomerative clustering based on single- 3
-linkage, complete-linkage criteria
-- [ ] 10) Write a program to develop Principal Component Analysis(PCA) and 3
-Linear Discriminant Analysis(LDA) algorithms.
+- [x] 4) Box Plot and minimax Algo(Alpha beta)
+
+- [x] 5) Naive Bayes Classifier with Titanic Dataset
+
+- [x] 6) KNN with Glass dataset(Euclidean)
+
+- [x] 7) KNN with fruit dataset(Manhattan)
+
+- [x] 8) Kmeans with iris dataset
+
+- [x] 9) Agglomerative clustering based on single-linkage, complete-linkage criteria
+
+- [ ] 10) Principal Component Analysis(PCA) and Linear Discriminant Analysis(LDA) algorithms.
 
 
